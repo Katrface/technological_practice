@@ -1,0 +1,106 @@
+<html>
+<head><title>Задания по теме</title>
+</head>
+
+<body>
+
+<p>a = <input type="text" id ="z_1"></p>
+<p>min = <input type="text" id ="z_2"></p>
+<p>lang = <input type="text" id ="z_3"></p>
+<p>num = <input type="text" id ="z_5"></p>
+<p>str = <input type="text" id ="z_6"></p>
+
+<button onclick="z_1();z_2();z_3();z_4();z_5();z_6();">Проверить</button>
+<p id="r_1"></p>
+
+</body>
+
+<script>
+function z_1(){
+	console.log("#1");
+	a = document.getElementById('z_1').value;
+	if (a == 10) r1 = "Верно"; else r1 = "Неверно";
+	//document.getElementById('r_1').innerHTML = r1;
+	console.log(r1);
+	console.log("");
+}
+
+function z_2(){
+	console.log("#2");
+	
+	min = document.getElementById('z_2').value;
+	
+	if (min < 15) r2 = "в первую";
+	else if (min < 30) r2 = "во вторую";
+	else if (min < 45) r2 = "в третью";
+	else r2 = "в четвертую";
+	
+	console.log(r2 + " четверть часа");
+	console.log("");
+}
+
+function z_3(){
+	console.log("#3");
+	lang = document.getElementById('z_3').value;
+	arr = [];
+	if (lang == 'ru') arr = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+	else if (lang == 'en') arr = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+	
+	console.log(arr);
+	console.log("");
+}
+
+function z_4(){
+	console.log("#4");
+	arr4 = [5, 0, -3, 2];
+	arr4.forEach(element => {
+		if(element == 0 || element == 2)
+			el = element + 7;
+		else
+			el = element/10;
+		console.log(element + " -> " + el);
+	});
+	console.log("");
+}
+
+function z_5(){
+	console.log("#5");
+	num = document.getElementById('z_5').value;
+	result = "";
+	switch(num){
+		case "1":
+			result = "зима";
+			break;
+		case "2":
+			result = "весна";
+			break;
+		case "3":
+			result = "лето";
+			break;
+		case "4":
+			result = "осень";
+			break;
+	}
+	
+	console.log(result);
+	console.log("");
+}
+
+function z_6(){
+	console.log("#6")
+	str = document.getElementById('z_6').value;
+	arr = ["1", "2", "3"];
+	
+	console.log(check(arr, str));
+}
+
+function check(arr, str){
+	
+	for (i = 0; i < arr.length; i++){
+		if (str[1] == arr[i]) return true;
+	}
+	return false;
+}
+
+</script>
+</html>
